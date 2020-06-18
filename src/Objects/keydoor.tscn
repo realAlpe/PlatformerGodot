@@ -1,0 +1,101 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets_industrial_proj/industrial.v2.png" type="Texture" id=1]
+[ext_resource path="res://src/Objects/keydoor.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5, 16 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 28, 17 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "KEYDOOR_open_anim"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpriteDown:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SpriteUp:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "START_keydoor"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpriteUp:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SpriteDown:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[node name="keydoor" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="SpriteUp" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 1 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 96, 64, 16 )
+
+[node name="SpriteDown" type="Sprite" parent="."]
+position = Vector2( 0, 8 )
+rotation = 3.14159
+texture = ExtResource( 1 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 96, 64, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+
+[node name="area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
+visible = false
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "START_keydoor"
+anims/KEYDOOR_open_anim = SubResource( 3 )
+anims/START_keydoor = SubResource( 4 )
