@@ -1,3 +1,5 @@
+- means its done.
+
 	What I want to add:
 
 Background, parallaxel (connect to the flying objects in each level)
@@ -11,15 +13,16 @@ ADD a level chooser
 dash animation
 add sound effects
 add soundtrack
+IMPROVE PAUSE MENU AND ALL SCREENS
 
 
 
 	mechanics:
-teleporter
-key
-Add a crystal that resets your dash and jump
-make the conveyor belts move you
-jump pad tile
+-teleporter
+-key
+-Add a crystal that resets your dash and jump
+-make the conveyor belts move you
+-jump pad tile
 
 add different kind of movement that you will unlock later on
 

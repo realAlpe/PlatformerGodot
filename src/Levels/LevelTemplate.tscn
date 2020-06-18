@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://src/Tiles/Tilemaps2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Objects/Tilemaps2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Objects/PortalScene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Objects/keydoor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Objects/key.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/Tiles/Spike.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Objects/Spike.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Objects/Crystal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Objects/JumpPad.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/UI/UserInterface.tscn" type="PackedScene" id=9]
 
 [node name="Level01" type="Node2D"]
@@ -29,6 +31,12 @@ position = Vector2( 185, -55 )
 
 [node name="keydoor" parent="Objects" instance=ExtResource( 4 )]
 position = Vector2( 323, -52 )
+
+[node name="CrystalArea" parent="Objects" instance=ExtResource( 7 )]
+position = Vector2( 216, -64 )
+
+[node name="JumpPadArea" parent="Objects" instance=ExtResource( 8 )]
+position = Vector2( 280, -42 )
 
 [node name="Spikes" type="Node2D" parent="Objects"]
 

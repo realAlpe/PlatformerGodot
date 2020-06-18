@@ -9,9 +9,11 @@
 [ext_resource path="res://src/Levels/Level02.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/PortalScene.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/Tiles/Spike.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Objects/Spike.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/UI/UserInterface.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets_industrial_proj/new_dynamicfont_sma.tres" type="DynamicFont" id=12]
+
+
 
 
 [sub_resource type="ConvexPolygonShape2D" id=1]

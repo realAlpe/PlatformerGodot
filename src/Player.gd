@@ -38,10 +38,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("ui_up"):
 		direction.y = -1
 	if Input.is_action_just_pressed("jump") and not is_on_floor() and dash_count < 1:
-		if direction.y == -1:
-			velocity.y += JUMP_POWER * 1.5
-			dash_count += 1
-		elif direction.x == 1:
+		if direction.x == 1:
 			velocity.x -= JUMP_POWER
 			velocity.y += JUMP_POWER * 0.5
 			dash_count += 1
@@ -104,7 +101,9 @@ func _on_SpikeDetector_area_entered(area: Area2D) -> void:
 		if area.name != "Area2D":
 			if area.name != "key":
 				if area.name != "area":
-					die()
+					if area.name != "CrystalArea":
+						if area.name != "JumpPadArea":
+							die()
 
 func die() -> void:
 	PlayerData.deaths += 1
