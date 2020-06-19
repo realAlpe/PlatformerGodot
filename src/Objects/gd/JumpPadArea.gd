@@ -7,7 +7,7 @@ var currently_triggered: = false
 func _ready() -> void:
 	connect("body_entered", self, "_on_body_entered")
 
-func _on_body_entered(body):
+func _on_body_entered(body) -> void:
 	if not currently_triggered:
 		body.velocity.y -= 1024
 		body.dash_count = 0
@@ -18,3 +18,6 @@ func _on_body_entered(body):
 func _on_SpriteTimer_timeout() -> void:
 	sprite.frame = 0
 	currently_triggered = false
+
+
+
