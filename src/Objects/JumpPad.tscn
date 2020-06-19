@@ -13,6 +13,7 @@ extents = Vector2( 9.18576, 1.82988 )
 position = Vector2( 0, -2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, 3.10692 )
 shape = SubResource( 2 )
 
@@ -26,6 +27,7 @@ region_enabled = true
 region_rect = Rect2( 16, 75, 32, 21 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JumpPadArea"]
+visible = false
 position = Vector2( 0, -6 )
 shape = SubResource( 1 )
 

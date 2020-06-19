@@ -15,6 +15,9 @@ add sound effects
 add soundtrack
 IMPROVE PAUSE MENU AND ALL SCREENS
 
+ADD SECRET TO THE RIGHT OF LEVEL 9
+
+LEVEL GO DOWN AND UP TO COLLECT KEY
 
 
 	mechanics:
