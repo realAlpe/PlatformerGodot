@@ -3,21 +3,22 @@
 	What I want to add:
 
 Background, parallaxel (connect to the flying objects in each level)
-20 levels
+-20 levels
 Lighting and shadows
 more advanced camera setting such as looking up and down
 death animation
 fix the font at the first levels
 and a CONTROLS tab at the start menu
-ADD a level chooser
+ADD a level chooser (DO THIS WITH PLAYERDATA AND EACH LEVEL WHEN REACHING PORTAL ADD "ACHIEVEDLV##" = true
 dash animation
 add sound effects
 add soundtrack
+
+ADD BOSS LEVEL 21
 IMPROVE PAUSE MENU AND ALL SCREENS
-
+ADD INTERACTIVE BUTTON AND GUIDES FOR THE NEWLY IMPLEMENTED MECHANICS IN THE RESPECTIVE LEVELS
 ADD SECRET TO THE RIGHT OF LEVEL 9
-
-LEVEL GO DOWN AND UP TO COLLECT KEY
+CHANGE KEY SPRITE
 
 
 	mechanics:

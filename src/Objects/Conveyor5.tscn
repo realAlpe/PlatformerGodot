@@ -2,11 +2,8 @@
 
 [ext_resource path="res://src/Objects/AnimatedTiles.tscn" type="PackedScene" id=1]
 
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 40, 4.29003 )
+extents = Vector2( 40, 5.17017 )
 
 [node name="Conveyor5" type="StaticBody2D"]
 collision_layer = 2
@@ -14,8 +11,9 @@ collision_mask = 0
 constant_linear_velocity = Vector2( 64, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 8, -12 )
+position = Vector2( -0.028614, -10.9912 )
 shape = SubResource( 1 )
 
 [node name="AnimatedTiles" parent="." instance=ExtResource( 1 )]
+position = Vector2( -8, 0 )
 tile_data = PoolIntArray( -2, 1, 0, -1, 0, 0, -65536, 2, 0, -65535, 0, 0, -65534, 3, 0 )

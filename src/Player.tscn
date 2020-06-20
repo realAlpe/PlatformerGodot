@@ -40,35 +40,35 @@ region = Rect2( 112, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 256, 16, 16 )
+region = Rect2( 64, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 256, 16, 16 )
+region = Rect2( 16, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 256, 16, 16 )
+region = Rect2( 32, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 256, 16, 16 )
+region = Rect2( 48, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
-region = Rect2( 80, 256, 16, 16 )
+region = Rect2( 64, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 256, 16, 16 )
+region = Rect2( 80, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
-region = Rect2( 112, 256, 16, 16 )
+region = Rect2( 96, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 272, 16, 16 )
+region = Rect2( 112, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 1 )
@@ -93,15 +93,15 @@ animations = [ {
 "name": "walk_anim",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
-"loop": false,
-"name": "land_anim",
-"speed": 12.0
-}, {
-"frames": [ SubResource( 17 ) ],
+"frames": [ SubResource( 10 ) ],
 "loop": true,
 "name": "jump_anim",
 "speed": 6.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"loop": false,
+"name": "land_anim",
+"speed": 12.0
 }, {
 "frames": [ SubResource( 18 ), SubResource( 19 ) ],
 "loop": false,

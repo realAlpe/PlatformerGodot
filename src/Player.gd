@@ -101,9 +101,12 @@ func _on_SpikeDetector_area_entered(area: Area2D) -> void:
 		if area.name != "Area2D":
 			if area.name != "key":
 				if area.name != "area":
-					if area.name != "CrystalArea":
-						if area.name != "JumpPadArea":
-							die()
+					if area.name != "JumpPadArea":
+						if area.name != "CrystalArea":
+							if area.name != "CrystalArea2":
+								if area.name != "CrystalArea3":
+									if area.name != "CrystalArea4":
+											die()
 
 func die() -> void:
 	PlayerData.deaths += 1

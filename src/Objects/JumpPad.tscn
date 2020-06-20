@@ -3,10 +3,10 @@
 [ext_resource path="res://assets_industrial_proj/industrial.v2.png" type="Texture" id=1]
 [ext_resource path="res://src/Objects/gd/JumpPadArea.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 7.00716 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 9.18576, 1.82988 )
 
 [node name="JumpPad" type="StaticBody2D"]
@@ -15,7 +15,7 @@ position = Vector2( 0, -2 )
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( 0, 3.10692 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="JumpPadArea" type="Area2D" parent="."]
 script = ExtResource( 2 )
@@ -29,7 +29,7 @@ region_rect = Rect2( 16, 75, 32, 21 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JumpPadArea"]
 visible = false
 position = Vector2( 0, -6 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="SpriteTimer" type="Timer" parent="JumpPadArea"]
 wait_time = 0.3

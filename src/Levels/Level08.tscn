@@ -9,11 +9,9 @@
 [ext_resource path="res://src/animations/railway_right.tres" type="Texture" id=7]
 [ext_resource path="res://src/Objects/PortalScene.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Objects/PorterScene.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/Screens/EndScreen.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Levels/Level09.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Objects/Spike.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/UI/UserInterface.tscn" type="PackedScene" id=12]
-
-
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
