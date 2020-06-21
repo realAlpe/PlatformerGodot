@@ -12,3 +12,4 @@ func _on_body_entered(body):
 			anim_player.play("KEY_fade_red")
 			body.keys += 1
 			count = 1
+

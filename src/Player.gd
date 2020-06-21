@@ -16,6 +16,7 @@ var final_tele_posi: = Vector2(0, 0)
 var velocity = Vector2.ZERO
 var jump_count = 0
 var dash_count = 0
+var is_dashing = false
 var keys = 0
 
 func _physics_process(delta: float) -> void:
@@ -26,6 +27,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		jump_count = 0
 		dash_count = 0
+		is_dashing = false
 	
 	
 	#Gets the input from the player
@@ -38,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("ui_up"):
 		direction.y = -1
 	if Input.is_action_just_pressed("jump") and not is_on_floor() and dash_count < 1:
+		is_dashing = true
 		if direction.x == 1:
 			velocity.x -= JUMP_POWER
 			velocity.y += JUMP_POWER * 0.5
