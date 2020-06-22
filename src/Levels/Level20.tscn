@@ -38,6 +38,9 @@ next_scene = ExtResource( 12 )
 [node name="Area2D" parent="Objects/Porter" instance=ExtResource( 7 )]
 position = Vector2( 664, -312 )
 
+[node name="TeleportPos" parent="Objects/Porter/Area2D" index="4"]
+position = Vector2( 480, -176 )
+
 [node name="Conveyor" type="Node2D" parent="Objects"]
 
 [node name="Conveyor5" parent="Objects/Conveyor" instance=ExtResource( 11 )]
@@ -448,9 +451,6 @@ tile_data = PoolIntArray( -2293760, 0, 0, -2293759, 0, 0, -2293758, 0, 0, -22937
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 456, -472 )
 
-[node name="TeleportPosition" parent="Player" index="5"]
-position = Vector2( 465, -200 )
-
 [node name="ParallaxBackground" parent="." instance=ExtResource( 13 )]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -463,6 +463,8 @@ __meta__ = {
 }
 
 [editable path="Objects/PortalScene"]
+
+[editable path="Objects/Porter/Area2D"]
 
 [editable path="Tilemaps2"]
 

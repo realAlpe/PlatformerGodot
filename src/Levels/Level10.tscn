@@ -215,6 +215,9 @@ position = Vector2( 280, -368 )
 [node name="Area2D" parent="Objects" instance=ExtResource( 4 )]
 position = Vector2( 912, -64 )
 
+[node name="TeleportPos" parent="Objects/Area2D" index="4"]
+position = Vector2( -544, -168 )
+
 [node name="Tilemaps2" parent="." instance=ExtResource( 1 )]
 
 [node name="BuildingTiles" parent="Tilemaps2" index="0"]
@@ -225,9 +228,6 @@ tile_data = PoolIntArray( -2293760, 0, 0, -2293759, 0, 0, -2293758, 0, 0, -22937
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1120, -264 )
-
-[node name="TeleportPosition" parent="Player" index="5"]
-position = Vector2( -592, -224 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 7 )]
 
@@ -241,6 +241,8 @@ __meta__ = {
 }
 
 [editable path="Objects/PortalScene"]
+
+[editable path="Objects/Area2D"]
 
 [editable path="Tilemaps2"]
 

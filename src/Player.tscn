@@ -160,27 +160,14 @@ frame = 6
 position = Vector2( -0.591068, 2.47174 )
 shape = SubResource( 22 )
 
-[node name="TeleportPosition" type="Node2D" parent="."]
-
-[node name="PorterDetector" type="Area2D" parent="."]
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="PorterDetector"]
-position = Vector2( -0.591068, 2.47174 )
-shape = SubResource( 22 )
-
 [node name="SpikeDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="SpikeDetector"]
 position = Vector2( -0.591068, 2.47174 )
 shape = SubResource( 22 )
 
-[node name="PorterTimer" type="Timer" parent="."]
-wait_time = 0.7
-
 [node name="ghost_timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
-[connection signal="area_entered" from="PorterDetector" to="." method="_on_PorterDetector_area_entered"]
 [connection signal="area_entered" from="SpikeDetector" to="." method="_on_SpikeDetector_area_entered"]
-[connection signal="timeout" from="PorterTimer" to="." method="_on_PorterTimer_timeout"]
 [connection signal="timeout" from="ghost_timer" to="." method="_on_ghost_timer_timeout"]

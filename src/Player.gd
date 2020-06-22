@@ -7,8 +7,6 @@ const FRICTION = 0.1
 const ACCELERATION = 0.1
 
 onready var anim_sprite: = get_node("AnimatedSprite")
-onready var tele_posi: = get_node("TeleportPosition")
-onready var timer_node: = get_node("PorterTimer")
 onready var spike_detec: = $SpikeDetector
 
 var final_tele_posi = Vector2(0, 0)
@@ -99,15 +97,7 @@ func _physics_process(delta: float) -> void:
 		$Camera2D.position.y = 0
 		hold_time_up = 0
 	
-func _on_PorterDetector_area_entered(area: Area2D) -> void:
-	if area.name == "Area2D":
-		timer_node.start()
-
-func _on_PorterTimer_timeout() -> void:
-	final_tele_posi = tele_posi.position + position
-	position = final_tele_posi
-	timer_node.stop()
-
+	
 func _on_SpikeDetector_area_entered(area: Area2D) -> void:
 	if area.name != "PorterDetector":
 		if area.name != "Area2D":

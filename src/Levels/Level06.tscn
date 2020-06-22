@@ -301,6 +301,9 @@ layer = 101
 [node name="Area2D" parent="." instance=ExtResource( 9 )]
 position = Vector2( -456, -80 )
 
+[node name="TeleportPos" parent="Area2D" index="4"]
+position = Vector2( -8, -192 )
+
 [node name="PortalScene" parent="." instance=ExtResource( 8 )]
 position = Vector2( -472, -448 )
 
@@ -330,9 +333,6 @@ position = Vector2( 16, -96 )
 
 [node name="Camera2D" parent="Player" index="1"]
 limit_right = 672
-
-[node name="TeleportPosition" parent="Player" index="5"]
-position = Vector2( 0, -224 )
 
 [node name="Spikes" type="Node2D" parent="."]
 position = Vector2( -1, -1 )
@@ -467,6 +467,8 @@ color = Color( 0.0980392, 0.101961, 0.156863, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[editable path="Area2D"]
 
 [editable path="PortalScene"]
 

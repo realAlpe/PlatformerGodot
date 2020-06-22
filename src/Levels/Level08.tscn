@@ -300,6 +300,9 @@ layer = 101
 [node name="Area2D" parent="." instance=ExtResource( 9 )]
 position = Vector2( 56, -488 )
 
+[node name="TeleportPos" parent="Area2D" index="4"]
+position = Vector2( 736, -16 )
+
 [node name="PortalScene" parent="." instance=ExtResource( 8 )]
 position = Vector2( 920, -520 )
 
@@ -329,9 +332,6 @@ position = Vector2( 176, -264 )
 
 [node name="Camera2D" parent="Player" index="1"]
 limit_bottom = -224
-
-[node name="TeleportPosition" parent="Player" index="5"]
-position = Vector2( 744, -40 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 1 )]
 
@@ -451,6 +451,8 @@ position = Vector2( 1080, -272 )
 
 [node name="Spike42" parent="Spikes" instance=ExtResource( 11 )]
 position = Vector2( 936, -400 )
+
+[editable path="Area2D"]
 
 [editable path="PortalScene"]
 
