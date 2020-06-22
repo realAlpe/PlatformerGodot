@@ -10,7 +10,7 @@
 [ext_resource path="res://src/Objects/JumpPad.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/UI/UserInterface.tscn" type="PackedScene" id=9]
 
-[node name="Level01" type="Node2D"]
+[node name="Level10" type="Node2D"]
 __meta__ = {
 "_edit_horizontal_guides_": [ -184.0, -576.0 ],
 "_edit_vertical_guides_": [ 1184.0 ]
@@ -230,6 +230,15 @@ position = Vector2( 1120, -264 )
 position = Vector2( -592, -224 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 7 )]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -680.0
+margin_right = 2912.0
+margin_bottom = 1304.0
+color = Color( 0.0980392, 0.101961, 0.156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [editable path="Objects/PortalScene"]
 

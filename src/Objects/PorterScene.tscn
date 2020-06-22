@@ -3,7 +3,6 @@
 [ext_resource path="res://assets_industrial_proj/industrial.v2.png" type="Texture" id=1]
 [ext_resource path="res://src/Objects/gd/PorterScene.gd" type="Script" id=2]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
 
@@ -134,4 +133,6 @@ region_rect = Rect2( 144, 256, 9, 9 )
 autoplay = "START_porter"
 anims/Porter_change_pos = SubResource( 2 )
 anims/START_porter = SubResource( 3 )
+
+[node name="TeleportPos" type="Position2D" parent="."]
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]

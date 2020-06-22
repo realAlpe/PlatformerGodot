@@ -5,23 +5,27 @@
 -Background, parallaxel (connect to the flying objects in each level)
 -20 levels
 -Lighting and shadows
-more advanced camera setting such as looking up and down
-death animation
+-dash animation
+-more advanced camera setting such as looking up and down
+death animation (not so sure about this anymore tbh
 fix the font at the first levels
 and a CONTROLS tab at the start menu
-ADD a level chooser (DO THIS WITH PLAYERDATA AND EACH LEVEL WHEN REACHING PORTAL ADD "ACHIEVEDLV##" = true
-dash animation
 add sound effects
 add soundtrack
 
+ADD RESTART BUTTON AND ITS FUNCTIONALITY and quit button = ESC
+
+UI with death count (and maybe time)
+
+ADD a level chooser (DO THIS WITH PLAYERDATA AND EACH LEVEL WHEN REACHING PORTAL ADD "ACHIEVEDLV##" = true
 ADD BOSS LEVEL 21 (RED LASER THAT FOLLOWS YOU TILL THE END VERY DIFFICULT??)
 IMPROVE PAUSE MENU AND ALL SCREENS
 ADD INTERACTIVE BUTTON AND GUIDES FOR THE NEWLY IMPLEMENTED MECHANICS IN THE RESPECTIVE LEVELS
-ADD RESTART BUTTON AND ITS FUNCTIONALITY
 ADD SECRET TO THE RIGHT OF LEVEL 9
 CHANGE KEY SPRITE
 FIX BUG WHERE U CANT QUIT ON THE START MENU AFTER PAUSE MENU 
 CHANGE TILES
+ADD FOG (WATCH VIDEO ON PLAYLIST)
 
 
 	mechanics:

@@ -11,46 +11,43 @@ onready var tele_posi: = get_node("TeleportPosition")
 onready var timer_node: = get_node("PorterTimer")
 onready var spike_detec: = $SpikeDetector
 
-var final_tele_posi: = Vector2(0, 0)
-
+var final_tele_posi = Vector2(0, 0)
 var velocity = Vector2.ZERO
-var jump_count = 0
 var dash_count = 0
 var is_dashing = false
 var keys = 0
+var looking_right = true
+var hold_time_down = 0.0
+var hold_time_up = 0.0
+var camera_changed_down = false
+var camera_changed_up = false
 
 func _physics_process(delta: float) -> void:
 	
 	var input_velocity = Vector2.ZERO
 	var direction = Vector2.ZERO
-	
 	if is_on_floor():
-		jump_count = 0
 		dash_count = 0
 		is_dashing = false
-	
 	
 	#Gets the input from the player
 	if Input.is_action_pressed("ui_right"):
 		input_velocity.x += 1
 		direction.x = 1
+		looking_right = true
 	if Input.is_action_pressed("ui_left"):
 		input_velocity.x -= 1
 		direction.x = -1
-	if Input.is_action_pressed("ui_up"):
-		direction.y = -1
+		looking_right = false
 	if Input.is_action_just_pressed("jump") and not is_on_floor() and dash_count < 1:
 		is_dashing = true
-		if direction.x == 1:
+		dash_count += 1
+		velocity.y += JUMP_POWER * 0.5
+		if looking_right:
 			velocity.x -= JUMP_POWER
-			velocity.y += JUMP_POWER * 0.5
-			dash_count += 1
-		elif direction.x == -1:
+		if not looking_right:
 			velocity.x += JUMP_POWER
-			velocity.y += JUMP_POWER * 0.5
-			dash_count += 1
 	elif Input.is_action_just_pressed("jump") and is_on_floor():
-		jump_count += 1
 		velocity.y += JUMP_POWER - 128
 	
 	
@@ -64,29 +61,43 @@ func _physics_process(delta: float) -> void:
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	
-	#Applying the animation
-	if direction.x == 1 and velocity.y < 0:
+	#Choosing which direction the character faces
+	if looking_right:
 		anim_sprite.set_flip_h(false)
-	if direction.x == 1 and velocity.y > 0:
-		anim_sprite.set_flip_h(false)
-	if direction.x == -1 and velocity.y < 0:
-		anim_sprite.set_flip_h(true)
-	if direction.x == -1 and velocity.y > 0:
+	elif not looking_right:
 		anim_sprite.set_flip_h(true)
 	
+	
+	#Applying the animation
 	if velocity.y < 0:
 		anim_sprite.play("jump_anim")
 	elif velocity.y > 0:
 		anim_sprite.play("fall_anim")
-	elif direction.x == 1:
-		anim_sprite.set_flip_h(false)
-		anim_sprite.play("walk_anim")
-	elif direction.x == -1:
-		anim_sprite.set_flip_h(true)
+	elif direction.x == 1 or direction.x == -1:
 		anim_sprite.play("walk_anim")
 	else:
 		anim_sprite.play("idle_anim")
 	
+	
+	#Changes the camera to look up or down after holding a while
+	if Input.is_action_pressed("ui_down") and is_on_floor():
+		hold_time_down += delta
+		if hold_time_down >= 0.65:
+			camera_changed_down = true
+			$Camera2D.position.y = 80
+	elif Input.is_action_just_released("ui_down") and camera_changed_down or not is_on_floor():
+		camera_changed_down = false
+		$Camera2D.position.y = 0
+		hold_time_down = 0
+	if Input.is_action_pressed("ui_up") and is_on_floor():
+		hold_time_up += delta
+		if hold_time_up >= 0.65:
+			camera_changed_up = true
+			$Camera2D.position.y = -80
+	elif Input.is_action_just_released("ui_up") and camera_changed_up or not is_on_floor():
+		camera_changed_up = false
+		$Camera2D.position.y = 0
+		hold_time_up = 0
 	
 func _on_PorterDetector_area_entered(area: Area2D) -> void:
 	if area.name == "Area2D":
@@ -95,9 +106,7 @@ func _on_PorterDetector_area_entered(area: Area2D) -> void:
 func _on_PorterTimer_timeout() -> void:
 	final_tele_posi = tele_posi.position + position
 	position = final_tele_posi
-	dash_count = 0
 	timer_node.stop()
-
 
 func _on_SpikeDetector_area_entered(area: Area2D) -> void:
 	if area.name != "PorterDetector":
@@ -114,4 +123,15 @@ func _on_SpikeDetector_area_entered(area: Area2D) -> void:
 func die() -> void:
 	PlayerData.deaths += 1
 	queue_free()
-	
+
+
+
+func _on_ghost_timer_timeout() -> void:
+	#Creates a trail of sprites behind the Player after he dashes
+	if is_dashing:
+		var this_ghost = preload("res://src/Objects/ghost.tscn").instance()
+		get_parent().add_child(this_ghost)
+		this_ghost.position = position
+		this_ghost.texture = anim_sprite.frames.get_frame(anim_sprite.animation, anim_sprite.frame)
+		this_ghost.flip_h = anim_sprite.flip_h
+		this_ghost.scale = anim_sprite.scale
