@@ -12,6 +12,7 @@ func _on_body_entered(body) -> void:
 		body.velocity.y = 0
 		body.velocity.y -= 950
 		body.dash_count = 0
+		body.is_dashing = false
 		sprite.frame = 1
 		sprite_timer.start()
 		currently_triggered = true

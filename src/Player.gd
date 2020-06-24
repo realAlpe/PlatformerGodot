@@ -80,7 +80,7 @@ func _physics_process(delta: float) -> void:
 	#Changes the camera to look up or down after holding a while
 	if Input.is_action_pressed("ui_down") and is_on_floor():
 		hold_time_down += delta
-		if hold_time_down >= 0.65:
+		if hold_time_down >= 0.5:
 			camera_changed_down = true
 			$Camera2D.position.y = 80
 	elif Input.is_action_just_released("ui_down") and camera_changed_down or not is_on_floor():
@@ -89,7 +89,7 @@ func _physics_process(delta: float) -> void:
 		hold_time_down = 0
 	if Input.is_action_pressed("ui_up") and is_on_floor():
 		hold_time_up += delta
-		if hold_time_up >= 0.65:
+		if hold_time_up >= 0.5:
 			camera_changed_up = true
 			$Camera2D.position.y = -80
 	elif Input.is_action_just_released("ui_up") and camera_changed_up or not is_on_floor():
@@ -125,3 +125,4 @@ func _on_ghost_timer_timeout() -> void:
 		this_ghost.texture = anim_sprite.frames.get_frame(anim_sprite.animation, anim_sprite.frame)
 		this_ghost.flip_h = anim_sprite.flip_h
 		this_ghost.scale = anim_sprite.scale
+		this_ghost.modulate = Color(1, 1, 1, 1)

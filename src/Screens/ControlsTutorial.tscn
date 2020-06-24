@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/UI/Background_screens.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets_industrial_proj/UI_theme.tres" type="Theme" id=2]
+[ext_resource path="res://src/UI/ChangeSceneButton.tscn" type="PackedScene" id=3]
+
+[node name="ControlsTutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background_screens" parent="." instance=ExtResource( 1 )]
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+text = "Move left: left arrow key
+Move right: right arrow key
+Look up: Hold up arrow key
+Look down: Hold down arrow key
+Jump: C
+Press C in air to perform a dash
+
+Restart level: R
+Pause menu: Esc"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChangeSceneButton" parent="." instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = 188.0
+margin_right = 128.0
+margin_bottom = 256.0
+next_scene_path = "res://src/Levels/Level01.tscn"

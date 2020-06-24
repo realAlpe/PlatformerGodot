@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://assets_industrial_proj/new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets_industrial_proj/pixel_font.tres" type="DynamicFont" id=1]
 
 [node name="Title" type="Label"]
 anchor_left = 0.5

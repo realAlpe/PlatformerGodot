@@ -12,7 +12,7 @@
 [ext_resource path="res://src/Objects/Crystal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/ParallaxBackground.tscn" type="PackedScene" id=11]
 
-[node name="Level01" type="Node2D"]
+[node name="Level17" type="Node2D"]
 __meta__ = {
 "_edit_horizontal_guides_": [ -184.0, -576.0, -416.0 ],
 "_edit_vertical_guides_": [ 1184.0, -128.0 ]

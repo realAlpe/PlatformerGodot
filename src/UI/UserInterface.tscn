@@ -29,10 +29,10 @@ __meta__ = {
 [node name="Title" parent="PauseOverlay" instance=ExtResource( 3 )]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = -75.0
-margin_top = -188.0
-margin_right = 75.0
-margin_bottom = -157.0
+margin_left = -90.0
+margin_top = -212.0
+margin_right = 90.0
+margin_bottom = -164.0
 text = "Paused"
 
 [node name="PauseMenu" type="VBoxContainer" parent="PauseOverlay"]
@@ -40,23 +40,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -152.0
-margin_top = -92.0
-margin_right = 152.0
-margin_bottom = 92.0
+margin_left = -176.0
+margin_top = -116.0
+margin_right = 184.0
+margin_bottom = 116.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RetryButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 5 )]
-margin_right = 304.0
-margin_bottom = 58.0
+margin_right = 360.0
+margin_bottom = 74.0
 
 [node name="ChangeSceneButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 1 )]
-margin_top = 62.0
-margin_right = 304.0
-margin_bottom = 120.0
+margin_top = 78.0
+margin_right = 360.0
+margin_bottom = 152.0
 text = "Main Screen"
 next_scene_path = "res://src/Screens/MainScreen.tscn"
 
 [node name="QuitButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 2 )]
-margin_top = 124.0
-margin_right = 304.0
-margin_bottom = 184.0
+margin_top = 156.0
+margin_right = 360.0
+margin_bottom = 232.0
