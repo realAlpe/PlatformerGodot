@@ -7,6 +7,8 @@ export var next_scene: PackedScene
 
 
 func _on_body_entered(body: Node) -> void:
+	var hurtbox = body.get_node("SpikeDetector")
+	hurtbox.monitoring = false
 	teleport()
 
 func teleport() -> void:

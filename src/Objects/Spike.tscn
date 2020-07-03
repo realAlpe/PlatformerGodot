@@ -3,17 +3,18 @@
 [ext_resource path="res://assets_industrial_proj/industrial.v2.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 1.22515 )
+extents = Vector2( 8, 1 )
 
 [node name="Spike" type="Area2D"]
-position = Vector2( -0.0236502, -1.50093 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.97635, 0.141897 )
+position = Vector2( 0, -1 )
 shape = SubResource( 1 )
 
 [node name="spikeSprite" type="Sprite" parent="."]
+position = Vector2( -8, -3 )
 texture = ExtResource( 2 )
+centered = false
 region_enabled = true
 region_rect = Rect2( 192, 45, 16, 3 )

@@ -9,4 +9,5 @@ func _on_Area2D_body_entered(body: Node) -> void:
 		count = 1
 		anim_player.play("Porter_change_pos")
 		yield(anim_player, "animation_finished")
+		body.velocity = Vector2.ZERO
 		body.position = $TeleportPos.position + position
