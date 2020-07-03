@@ -100,7 +100,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 position = Vector2( 528, -72 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -184.0, -576.0 ],
-"_edit_vertical_guides_": [ 1184.0, 672.0 ]
+"_edit_vertical_guides_": [ 1184.0, 672.0, 672.0 ]
 }
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
@@ -141,7 +141,7 @@ tile_data = PoolIntArray( -2293760, 7, 0, -2293759, 7, 1, -2293758, 7, 1, -22937
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 16, -96 )
 
-[node name="Camera2D" parent="Player" index="1"]
+[node name="Camera2D" parent="Player/CameraPivot" index="0"]
 limit_right = 672
 
 [node name="Spikes" type="Node2D" parent="."]

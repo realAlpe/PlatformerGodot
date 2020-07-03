@@ -106,7 +106,7 @@ shader_param/OCTAVES = 4
 [node name="Level07" type="Node2D"]
 __meta__ = {
 "_edit_horizontal_guides_": [ -184.0, -576.0 ],
-"_edit_vertical_guides_": [ 1184.0, 808.0, 864.0 ]
+"_edit_vertical_guides_": [ 1184.0, 808.0, 864.0, 864.0 ]
 }
 
 [node name="UserInterface2" type="CanvasLayer" parent="."]
@@ -147,7 +147,7 @@ tile_data = PoolIntArray( -2293760, 7, 0, -2293759, 7, 1, -2293758, 7, 1, -22937
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 56, -88 )
 
-[node name="Camera2D" parent="Player" index="1"]
+[node name="Camera2D" parent="Player/CameraPivot" index="0"]
 limit_right = 864
 
 [node name="ParallaxBackground2" parent="." instance=ExtResource( 1 )]

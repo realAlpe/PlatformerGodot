@@ -34,39 +34,39 @@ region = Rect2( 112, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 256, 16, 16 )
+region = Rect2( 0, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 256, 16, 16 )
+region = Rect2( 16, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 272, 16, 16 )
+region = Rect2( 32, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 272, 16, 16 )
+region = Rect2( 48, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 272, 16, 16 )
+region = Rect2( 64, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 272, 16, 16 )
+region = Rect2( 80, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 272, 16, 16 )
+region = Rect2( 96, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 272, 16, 16 )
+region = Rect2( 112, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
-region = Rect2( 80, 272, 16, 16 )
+region = Rect2( 64, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
@@ -74,15 +74,15 @@ region = Rect2( 96, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 1 )
-region = Rect2( 112, 272, 16, 16 )
+region = Rect2( 0, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 272, 16, 16 )
+region = Rect2( 16, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 256, 16, 16 )
+region = Rect2( 32, 256, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=21]
 animations = [ {
@@ -91,25 +91,25 @@ animations = [ {
 "name": "land_anim",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 8 ), SubResource( 9 ) ],
-"loop": true,
-"name": "idle_anim",
-"speed": 1.0
-}, {
-"frames": [ SubResource( 10 ) ],
-"loop": true,
-"name": "jump_anim",
-"speed": 6.0
-}, {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
 "name": "walk_anim",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 19 ), SubResource( 20 ) ],
+"frames": [ SubResource( 16 ) ],
+"loop": true,
+"name": "jump_anim",
+"speed": 6.0
+}, {
+"frames": [ SubResource( 17 ), SubResource( 18 ) ],
 "loop": false,
 "name": "fall_anim",
 "speed": 6.0
+}, {
+"frames": [ SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "idle_anim",
+"speed": 1.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=22]
@@ -127,20 +127,23 @@ range_layer_min = -512
 range_layer_max = 512
 shadow_enabled = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="CameraPivot" type="Position2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="CameraPivot"]
 current = true
-zoom = Vector2( 0.2, 0.2 )
+zoom = Vector2( 0.19, 0.19 )
 limit_left = 0
 limit_top = -576
 limit_right = 1184
 limit_bottom = 0
 limit_smoothed = true
 smoothing_enabled = true
+smoothing_speed = 4.0
 drag_margin_left = 0.25
 drag_margin_top = 0.25
 drag_margin_right = 0.25
 drag_margin_bottom = 0.25
-editor_draw_drag_margin = true
+editor_draw_limits = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -9.2365, -12.2747 )

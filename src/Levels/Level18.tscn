@@ -35,7 +35,7 @@ next_scene = ExtResource( 7 )
 [node name="Conveyor" type="Node2D" parent="Objects"]
 
 [node name="Conveyor5" parent="Objects/Conveyor" instance=ExtResource( 11 )]
-position = Vector2( 312, -48 )
+position = Vector2( 313, -48 )
 rotation = 0.0
 
 [node name="Conveyor7" parent="Objects/Conveyor" instance=ExtResource( 11 )]
