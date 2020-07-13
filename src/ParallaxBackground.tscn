@@ -8,7 +8,7 @@
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
 shader_param/color = Vector3( 0.35, 0.48, 0.95 )
-shader_param/OCTAVES = 4
+shader_param/OCTAVES = 5
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
@@ -34,8 +34,11 @@ offset = Vector2( 0, -572 )
 motion_scale = Vector2( 0.95, 0.95 )
 
 [node name="FogShader" type="Sprite" parent="ParallaxLayer4"]
+modulate = Color( 1, 1, 1, 0.788235 )
 material = SubResource( 1 )
 position = Vector2( 0, -572 )
 scale = Vector2( 2.19998, 2.19998 )
 texture = ExtResource( 2 )
 centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 520, 260 )

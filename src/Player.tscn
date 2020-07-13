@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets_industrial_proj/industrial.v2.png" type="Texture" id=1]
 [ext_resource path="res://assets_industrial_proj/light2.png" type="Texture" id=2]
@@ -14,106 +14,166 @@ region = Rect2( 32, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 256, 16, 16 )
+region = Rect2( 16, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 256, 16, 16 )
+region = Rect2( 32, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
-region = Rect2( 80, 256, 16, 16 )
+region = Rect2( 48, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 256, 16, 16 )
+region = Rect2( 64, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
-region = Rect2( 112, 256, 16, 16 )
+region = Rect2( 80, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 272, 16, 16 )
+region = Rect2( 96, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 272, 16, 16 )
+region = Rect2( 112, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 272, 16, 16 )
+region = Rect2( 0, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 272, 16, 16 )
+region = Rect2( 16, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 272, 16, 16 )
+region = Rect2( 32, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 80, 272, 16, 16 )
+region = Rect2( 48, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 272, 16, 16 )
+region = Rect2( 64, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
-region = Rect2( 112, 272, 16, 16 )
+region = Rect2( 80, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 272, 16, 16 )
+region = Rect2( 96, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 272, 16, 16 )
+region = Rect2( 112, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 256, 16, 16 )
+region = Rect2( 96, 272, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 256, 16, 16 )
+region = Rect2( 0, 256, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 256, 16, 16 )
+region = Rect2( 64, 272, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=21]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "idle_anim",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": false,
 "name": "land_anim",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
 "name": "walk_anim",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 16 ) ],
-"loop": true,
-"name": "jump_anim",
-"speed": 6.0
-}, {
-"frames": [ SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 18 ), SubResource( 19 ) ],
 "loop": false,
 "name": "fall_anim",
 "speed": 6.0
 }, {
-"frames": [ SubResource( 19 ), SubResource( 20 ) ],
+"frames": [ SubResource( 20 ) ],
 "loop": true,
-"name": "idle_anim",
-"speed": 1.0
+"name": "jump_anim",
+"speed": 6.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 5.56214, 7.31371 )
+
+[sub_resource type="Animation" id=23]
+resource_name = "camera_zoom_in"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("CameraPivot/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( -2, 1 ),
+"update": 0,
+"values": [ Vector2( 0.19, 0.19 ), Vector2( 0.13, 0.13 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "camera_zoom_out"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("CameraPivot/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( -2, 1 ),
+"update": 0,
+"values": [ Vector2( 0.13, 0.13 ), Vector2( 0.19, 0.19 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "start"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CameraPivot/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.19, 0.19 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CameraPivot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 6
@@ -138,11 +198,6 @@ limit_right = 1184
 limit_bottom = 0
 limit_smoothed = true
 smoothing_enabled = true
-smoothing_speed = 4.0
-drag_margin_left = 0.25
-drag_margin_top = 0.25
-drag_margin_right = 0.25
-drag_margin_bottom = 0.25
 editor_draw_limits = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -164,5 +219,15 @@ shape = SubResource( 22 )
 [node name="ghost_timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="death_buffer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "start"
+anims/camera_zoom_in = SubResource( 23 )
+anims/camera_zoom_out = SubResource( 24 )
+anims/start = SubResource( 25 )
 [connection signal="area_entered" from="SpikeDetector" to="." method="_on_SpikeDetector_area_entered"]
 [connection signal="timeout" from="ghost_timer" to="." method="_on_ghost_timer_timeout"]
+[connection signal="timeout" from="death_buffer" to="." method="_on_death_buffer_timeout"]

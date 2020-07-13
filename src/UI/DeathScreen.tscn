@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/UI/UserInterface.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TitleScreen_New/Buttons/FinalButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TitleScreen_New/Panel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UI/Background_screens.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/UI/DeathScreen.gd" type="Script" id=6]
+
+[node name="UserInterface" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+
+[node name="Background_screens" parent="." index="0" instance=ExtResource( 4 )]
+
+[node name="MarginContainer" type="MarginContainer" parent="Background_screens" index="2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 659.0
+margin_top = 274.0
+margin_right = -660.0
+margin_bottom = -273.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background_screens/MarginContainer" index="0"]
+margin_right = 601.0
+margin_bottom = 533.0
+custom_constants/separation = 54
+
+[node name="Panel2" parent="Background_screens/MarginContainer/VBoxContainer" index="0" instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_right = 0.0
+margin_left = 0.0
+margin_right = 601.0
+
+[node name="Label" parent="Background_screens/MarginContainer/VBoxContainer/Panel2" index="0"]
+text = "YOU DIED"
+
+[node name="MarginContainer" type="MarginContainer" parent="Background_screens/MarginContainer/VBoxContainer" index="1"]
+margin_top = 154.0
+margin_right = 601.0
+margin_bottom = 154.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Background_screens/MarginContainer/VBoxContainer" index="2"]
+margin_top = 208.0
+margin_right = 601.0
+margin_bottom = 478.0
+
+[node name="Button" type="VBoxContainer" parent="Background_screens/MarginContainer/VBoxContainer/CenterContainer" index="0"]
+margin_left = 96.0
+margin_right = 504.0
+margin_bottom = 270.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+custom_constants/separation = 27
+
+[node name="RetryButton" parent="Background_screens/MarginContainer/VBoxContainer/CenterContainer/Button" index="0" instance=ExtResource( 2 )]
+margin_right = 408.0
+margin_bottom = 72.0
+text = "Retry"
+
+[node name="MainScreenButton" parent="Background_screens/MarginContainer/VBoxContainer/CenterContainer/Button" index="1" instance=ExtResource( 2 )]
+margin_top = 99.0
+margin_right = 408.0
+margin_bottom = 171.0
+text = "Main Screen"
+
+[node name="ExitGameButton" parent="Background_screens/MarginContainer/VBoxContainer/CenterContainer/Button" index="2" instance=ExtResource( 2 )]
+margin_top = 198.0
+margin_right = 408.0
+margin_bottom = 270.0
+text = "Exit Game"
+[connection signal="pressed" from="Background_screens/MarginContainer/VBoxContainer/CenterContainer/Button/RetryButton" to="." method="_on_RetryButton_pressed"]
+[connection signal="pressed" from="Background_screens/MarginContainer/VBoxContainer/CenterContainer/Button/MainScreenButton" to="." method="_on_MainScreenButton_pressed"]
+[connection signal="pressed" from="Background_screens/MarginContainer/VBoxContainer/CenterContainer/Button/ExitGameButton" to="." method="_on_ExitGameButton_pressed"]
+
+[editable path="Background_screens/MarginContainer/VBoxContainer/Panel2"]
+
+[editable path="PauseOverlay/MarginContainer/VBoxContainer/Panel"]

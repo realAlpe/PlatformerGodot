@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Particle/CrystalIdleParticle.tscn" type="PackedScene" id=1]
+
+[node name="CrystalCollectedParticle" instance=ExtResource( 1 )]
+emitting = false
+amount = 30
+one_shot = true
+explosiveness = 0.75
+randomness = 0.5

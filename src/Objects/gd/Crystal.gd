@@ -15,9 +15,10 @@ func _on_body_entered(body):
 		timer.start()
 		not_used = false
 		body.dash_count = 0
+		$CrystalCollectedParticle.emitting = true
 		anim_player.play("fade_out_crystal")
 
 func _on_Timer_timeout() -> void:
 	sprite_empty.visible = false
-	anim_player.play("START_crystal")
 	not_used = true
+	anim_player.play("START_crystal")

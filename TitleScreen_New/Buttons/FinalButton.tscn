@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://TitleScreen_New/Fonts/Pixel_64.tres" type="DynamicFont" id=1]
+[ext_resource path="res://TitleScreen_New/Buttons/button_style_pressed.tres" type="StyleBox" id=2]
+[ext_resource path="res://TitleScreen_New/Buttons/button_style_hover.tres" type="StyleBox" id=3]
+[ext_resource path="res://TitleScreen_New/Buttons/button_style_focus.tres" type="StyleBox" id=4]
+[ext_resource path="res://TitleScreen_New/Buttons/button_style_normal.tres" type="StyleBox" id=5]
+
+[node name="FinalButton" type="Button"]
+margin_right = 960.0
+margin_bottom = 104.0
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

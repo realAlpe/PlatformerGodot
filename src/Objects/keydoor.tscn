@@ -2,13 +2,10 @@
 
 [ext_resource path="res://assets_industrial_proj/industrial.v2.png" type="Texture" id=1]
 [ext_resource path="res://src/Objects/gd/keydoor.gd" type="Script" id=2]
-
+[ext_resource path="res://src/Objects/key.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 16 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 28, 17 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "KEYDOOR_open_anim"
@@ -90,13 +87,12 @@ region_rect = Rect2( 0, 96, 64, 16 )
 visible = false
 shape = SubResource( 1 )
 
-[node name="area" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
-visible = false
-shape = SubResource( 2 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "START_keydoor"
 anims/KEYDOOR_open_anim = SubResource( 3 )
 anims/START_keydoor = SubResource( 4 )
+
+[node name="Position2D" type="Position2D" parent="."]
+
+[node name="key" parent="Position2D" instance=ExtResource( 3 )]
+[connection signal="body_entered" from="Position2D/key" to="." method="_on_key_body_entered"]

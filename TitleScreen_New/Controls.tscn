@@ -1,0 +1,376 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://TitleScreen_New/Controls.gd" type="Script" id=1]
+[ext_resource path="res://TitleScreen_New/Fonts/Pixel_48.tres" type="DynamicFont" id=2]
+[ext_resource path="res://TitleScreen_New/Fonts/Pixel_64.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets_industrial_proj/UI_theme.tres" type="Theme" id=4]
+[ext_resource path="res://TitleScreen_New/FadeTransition.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/UI/Background_screens.tscn" type="PackedScene" id=6]
+[ext_resource path="res://TitleScreen_New/Buttons/button_style_normal.tres" type="StyleBox" id=7]
+[ext_resource path="res://TitleScreen_New/Panel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://TitleScreen_New/Buttons/MenuButton_new.tscn" type="PackedScene" id=9]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0784314, 0.0784314, 0.129412, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.243137, 0.278431, 0.313726, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 1
+expand_margin_left = 11.0
+expand_margin_top = 11.0
+shadow_size = 1
+shadow_offset = Vector2( 2, 2 )
+anti_aliasing = false
+
+[node name="Controls" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background_screens" parent="." instance=ExtResource( 6 )]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 192.0
+margin_top = 108.0
+margin_right = -192.0
+margin_bottom = -108.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 1536.0
+margin_bottom = 864.0
+custom_constants/separation = 96
+
+[node name="Movement" type="Panel" parent="MarginContainer/HBoxContainer"]
+margin_right = 720.0
+margin_bottom = 864.0
+size_flags_horizontal = 3
+custom_styles/panel = ExtResource( 7 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Movement"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_right = -16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Movement/MarginContainer"]
+margin_right = 688.0
+margin_bottom = 864.0
+custom_constants/separation = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" parent="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_right = 0.0
+margin_left = 0.0
+margin_right = 688.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" parent="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer/Panel" index="0"]
+text = "Movement"
+
+[node name="Right" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer"]
+margin_top = 116.0
+margin_right = 688.0
+margin_bottom = 284.0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer/Right"]
+margin_right = 688.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 3 )
+text = "Right:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer/Right"]
+margin_top = 68.0
+margin_right = 688.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 2 )
+text = " Keyboard: Right"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer/Right"]
+margin_top = 120.0
+margin_right = 688.0
+margin_bottom = 168.0
+custom_fonts/font = ExtResource( 2 )
+text = " D-Pad Right"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer"]
+margin_top = 300.0
+margin_right = 688.0
+margin_bottom = 468.0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer/Left"]
+margin_right = 688.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 3 )
+text = "Left:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer/Left"]
+margin_top = 68.0
+margin_right = 688.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 2 )
+text = " Keyboard: Left"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer/Left"]
+margin_top = 120.0
+margin_right = 688.0
+margin_bottom = 168.0
+custom_fonts/font = ExtResource( 2 )
+text = " D-Pad Left"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jump" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer"]
+margin_top = 484.0
+margin_right = 688.0
+margin_bottom = 703.0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer/Jump"]
+margin_right = 688.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 3 )
+text = "Jump:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer/Jump"]
+margin_top = 68.0
+margin_right = 688.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 2 )
+text = " Keyboard: Spacebar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer/Jump"]
+margin_top = 120.0
+margin_right = 688.0
+margin_bottom = 219.0
+custom_fonts/font = ExtResource( 2 )
+text = " PS4 Cross, Xbox A, 
+  Nintendo A"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dash" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer"]
+margin_top = 719.0
+margin_right = 688.0
+margin_bottom = 835.0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer/Dash"]
+margin_right = 688.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 3 )
+text = "Dash:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer/Dash"]
+margin_top = 68.0
+margin_right = 688.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 2 )
+text = " Press \"Jump\" in air"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Other" type="Panel" parent="MarginContainer/HBoxContainer"]
+margin_left = 816.0
+margin_right = 1536.0
+margin_bottom = 864.0
+size_flags_horizontal = 3
+custom_styles/panel = ExtResource( 7 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Other"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_right = -16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Other/MarginContainer"]
+margin_right = 688.0
+margin_bottom = 864.0
+custom_constants/separation = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" parent="MarginContainer/HBoxContainer/Other/MarginContainer/VBoxContainer" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_right = 0.0
+margin_left = 0.0
+margin_right = 688.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" parent="MarginContainer/HBoxContainer/Other/MarginContainer/VBoxContainer/Panel" index="0"]
+text = "Other"
+
+[node name="Interact" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Other/MarginContainer/VBoxContainer"]
+margin_top = 116.0
+margin_right = 688.0
+margin_bottom = 335.0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Other/MarginContainer/VBoxContainer/Interact"]
+margin_right = 688.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 3 )
+text = "Interact:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/Other/MarginContainer/VBoxContainer/Interact"]
+margin_top = 68.0
+margin_right = 688.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 2 )
+text = " Keyboard: E"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/Other/MarginContainer/VBoxContainer/Interact"]
+margin_top = 120.0
+margin_right = 688.0
+margin_bottom = 219.0
+custom_fonts/font = ExtResource( 2 )
+text = " PS4 Square, Xbox X, 
+  Nintendo Y"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Other/MarginContainer/VBoxContainer"]
+margin_top = 351.0
+margin_right = 688.0
+margin_bottom = 570.0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Other/MarginContainer/VBoxContainer/Restart"]
+margin_right = 688.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 3 )
+text = "Restart:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/Other/MarginContainer/VBoxContainer/Restart"]
+margin_top = 68.0
+margin_right = 688.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 2 )
+text = " Keyboard: R"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/Other/MarginContainer/VBoxContainer/Restart"]
+margin_top = 120.0
+margin_right = 688.0
+margin_bottom = 219.0
+custom_fonts/font = ExtResource( 2 )
+text = " Select, PS4 Share,
+  Nintendo -"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Other/MarginContainer/VBoxContainer"]
+margin_top = 586.0
+margin_right = 688.0
+margin_bottom = 805.0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Other/MarginContainer/VBoxContainer/Pause"]
+margin_right = 688.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 3 )
+text = "Pause:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/Other/MarginContainer/VBoxContainer/Pause"]
+margin_top = 68.0
+margin_right = 688.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 2 )
+text = " Keyboard: Esc"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="MarginContainer/HBoxContainer/Other/MarginContainer/VBoxContainer/Pause"]
+margin_top = 120.0
+margin_right = 688.0
+margin_bottom = 219.0
+custom_fonts/font = ExtResource( 2 )
+text = " Start, PS4 Options,
+  Nintendo +"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" parent="." instance=ExtResource( 8 )]
+
+[node name="Label" parent="Panel" index="0"]
+text = "Controls"
+
+[node name="MenuButton" parent="." instance=ExtResource( 9 )]
+
+[node name="Label" parent="MenuButton" index="0"]
+text = "Back"
+
+[node name="FadeInTransition" parent="." instance=ExtResource( 5 )]
+[connection signal="pressed" from="MenuButton" to="." method="_on_MenuButton_pressed"]
+
+[editable path="MarginContainer/HBoxContainer/Movement/MarginContainer/VBoxContainer/Panel"]
+
+[editable path="MarginContainer/HBoxContainer/Other/MarginContainer/VBoxContainer/Panel"]
+
+[editable path="Panel"]
+
+[editable path="MenuButton"]

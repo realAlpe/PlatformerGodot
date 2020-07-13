@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://TitleScreen_New/Fonts/Pixel_96.tres" type="DynamicFont" id=1]
+[ext_resource path="res://TitleScreen_New/Buttons/button_style_hover.tres" type="StyleBox" id=2]
+[ext_resource path="res://TitleScreen_New/Buttons/button_style_pressed.tres" type="StyleBox" id=3]
+[ext_resource path="res://TitleScreen_New/Buttons/button_style_normal.tres" type="StyleBox" id=4]
+[ext_resource path="res://TitleScreen_New/Buttons/button_style_focus.tres" type="StyleBox" id=5]
+
+[node name="MenuButton" type="Button"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -240.0
+margin_top = -100.0
+margin_right = 240.0
+rect_min_size = Vector2( 0, 100 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 5 )
+custom_styles/normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "Menu"
+align = 1

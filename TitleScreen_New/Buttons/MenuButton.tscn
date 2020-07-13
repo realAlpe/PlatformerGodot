@@ -27,7 +27,7 @@ custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color_shadow = Color( 0.211765, 0.113725, 0.482353, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 4
-text = "LABEL"
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

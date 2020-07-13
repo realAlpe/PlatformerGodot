@@ -1,17 +1,19 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Objects/Tilemaps2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Objects/PortalScene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Objects/keydoor.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/Objects/key.tscn" type="PackedScene" id=5]
+[ext_resource path="res://TitleScreen_New/CanvasFade.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Objects/Spike.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Levels/Level13.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/JumpPad.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/UI/UserInterface.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/ParallaxBackground.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Levels/LevelTemplate.gd" type="Script" id=11]
 
 [node name="Level12" type="Node2D"]
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -184.0, -576.0 ],
 "_edit_vertical_guides_": [ 1184.0 ]
@@ -21,6 +23,7 @@ __meta__ = {
 layer = 101
 
 [node name="UserInterface" parent="UserInterface" instance=ExtResource( 9 )]
+level_length_sec = 26
 
 [node name="Objects" type="Node2D" parent="."]
 
@@ -30,17 +33,11 @@ position = Vector2( 72, -504 )
 [node name="PortalHitboxArea2D" parent="Objects/PortalScene" index="0"]
 next_scene = ExtResource( 7 )
 
-[node name="portalRed" parent="Objects/PortalScene/PortalHitboxArea2D" index="2"]
-visible = true
-
-[node name="ColorRect" parent="Objects/PortalScene/PortalHitboxArea2D/TransitionLayer" index="0"]
-visible = true
-
-[node name="key" parent="Objects" instance=ExtResource( 5 )]
-position = Vector2( 312, -88 )
-
 [node name="keydoor" parent="Objects" instance=ExtResource( 4 )]
 position = Vector2( 136, -496 )
+
+[node name="Position2D" parent="Objects/keydoor" index="4"]
+position = Vector2( 176, 408 )
 
 [node name="JumpPads" type="Node2D" parent="Objects"]
 position = Vector2( 0, -2 )
@@ -180,16 +177,11 @@ position = Vector2( 408, -472 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 10 )]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -680.0
-margin_right = 2912.0
-margin_bottom = 1304.0
-color = Color( 0.0980392, 0.101961, 0.156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="CanvasFade" parent="." instance=ExtResource( 5 )]
 
 [editable path="Objects/PortalScene"]
+
+[editable path="Objects/keydoor"]
 
 [editable path="Tilemaps2"]
 

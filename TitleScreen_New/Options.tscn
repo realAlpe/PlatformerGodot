@@ -1,0 +1,177 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://TitleScreen_New/Fonts/pixel_128.tres" type="DynamicFont" id=1]
+[ext_resource path="res://TitleScreen_New/Fonts/Pixel_96.tres" type="DynamicFont" id=2]
+[ext_resource path="res://TitleScreen_New/Buttons/Darker_box_button_normal.tres" type="StyleBox" id=3]
+[ext_resource path="res://TitleScreen_New/Control.gd" type="Script" id=4]
+[ext_resource path="res://src/UI/Background_screens.tscn" type="PackedScene" id=5]
+[ext_resource path="res://TitleScreen_New/Buttons/MenuButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://TitleScreen_New/FadeTransition.tscn" type="PackedScene" id=7]
+[ext_resource path="res://TitleScreen_New/Buttons/button_style_normal.tres" type="StyleBox" id=10]
+[ext_resource path="res://shaders/transition.shader" type="Shader" id=12]
+[ext_resource path="res://assets_industrial_proj/curtain.png" type="Texture" id=15]
+[ext_resource path="res://TitleScreen_New/Checkbox/Fullscreen.tscn" type="PackedScene" id=18]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 12 )
+shader_param/cutoff = 1.0
+shader_param/smooth_size = 0.4
+shader_param/color = null
+shader_param/mask = ExtResource( 15 )
+
+[node name="Options" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background_screens" parent="." instance=ExtResource( 5 )]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 96.0
+margin_top = 54.0
+margin_right = -96.0
+margin_bottom = -54.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 1728.0
+margin_bottom = 972.0
+custom_constants/separation = 54
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Main"]
+margin_right = 1728.0
+margin_bottom = 700.0
+custom_constants/separation = 96
+
+[node name="Panel" type="Panel" parent="MarginContainer/Main/HBoxContainer"]
+margin_right = 816.0
+margin_bottom = 700.0
+rect_min_size = Vector2( 0, 700 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 10 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Main/HBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_right = -16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Main/HBoxContainer/Panel/MarginContainer"]
+margin_right = 784.0
+margin_bottom = 700.0
+custom_constants/separation = 54
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resolution" type="Label" parent="MarginContainer/Main/HBoxContainer/Panel/MarginContainer/VBoxContainer"]
+margin_right = 784.0
+margin_bottom = 136.0
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = ExtResource( 1 )
+text = "Resolution"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Main/HBoxContainer/Panel/MarginContainer/VBoxContainer"]
+margin_top = 190.0
+margin_right = 784.0
+margin_bottom = 700.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Fullscreen" parent="MarginContainer/Main/HBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource( 18 )]
+margin_top = 181.0
+margin_right = 784.0
+margin_bottom = 253.0
+text = "Fullscreen"
+
+[node name="Borderless" parent="MarginContainer/Main/HBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource( 18 )]
+margin_top = 257.0
+margin_right = 784.0
+margin_bottom = 329.0
+text = "Borderless"
+
+[node name="Panel3" type="Panel" parent="MarginContainer/Main/HBoxContainer"]
+margin_left = 912.0
+margin_right = 1728.0
+margin_bottom = 700.0
+rect_min_size = Vector2( 0, 700 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 10 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Main/HBoxContainer/Panel3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_right = -16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Main/HBoxContainer/Panel3/MarginContainer"]
+margin_right = 784.0
+margin_bottom = 700.0
+custom_constants/separation = 54
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resolution" type="Label" parent="MarginContainer/Main/HBoxContainer/Panel3/MarginContainer/VBoxContainer"]
+margin_right = 784.0
+margin_bottom = 136.0
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = ExtResource( 1 )
+text = "Placeholder"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Main/HBoxContainer/Panel3/MarginContainer/VBoxContainer"]
+margin_top = 190.0
+margin_right = 784.0
+margin_bottom = 700.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Main"]
+margin_top = 754.0
+margin_right = 1728.0
+margin_bottom = 972.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Main/MarginContainer"]
+margin_right = 1728.0
+margin_bottom = 218.0
+
+[node name="MenuButton" parent="MarginContainer/Main/MarginContainer/VBoxContainer" instance=ExtResource( 6 )]
+margin_right = 1728.0
+margin_bottom = 104.0
+custom_fonts/font = ExtResource( 2 )
+text = "Main Menu"
+scene_to_load = "res://TitleScreen_New/TitleScreen.tscn"
+
+[node name="FadeInTransition" parent="." instance=ExtResource( 7 )]
+material = SubResource( 1 )
+[connection signal="pressed" from="MarginContainer/Main/HBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/Fullscreen" to="." method="_on_Fullscreen_pressed"]
+[connection signal="pressed" from="MarginContainer/Main/HBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/Borderless" to="." method="_on_Borderless_pressed"]
+
+[editable path="MarginContainer/Main/MarginContainer/VBoxContainer/MenuButton"]

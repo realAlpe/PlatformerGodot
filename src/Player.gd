@@ -6,9 +6,11 @@ const SPEED = 160
 const FRICTION = 0.1
 const ACCELERATION = 0.1
 
-onready var anim_sprite: = get_node("AnimatedSprite")
-onready var spike_detec: = $SpikeDetector
+onready var anim_sprite = get_node("AnimatedSprite")
+onready var hurtbox = $SpikeDetector
 onready var camera = $CameraPivot/Camera2D
+onready var anim_player = $AnimationPlayer
+onready var death_buffer = $death_buffer
 
 var is_inside_conveyor_area = false
 var final_tele_posi = Vector2(0, 0)
@@ -21,10 +23,12 @@ var hold_time_down = 0.0
 var hold_time_up = 0.0
 var camera_changed_down = false
 var camera_changed_up = false
-var test = 0
+var camera_x_pos = 0
+var camera_zoomed_in = false
+
+var death_cd = false
 
 func _physics_process(delta: float) -> void:
-	
 	var direction = Vector2.ZERO
 	if is_on_floor():
 		dash_count = 0
@@ -37,18 +41,18 @@ func _physics_process(delta: float) -> void:
 		
 		direction.x = 1
 		
-		test += 1
-		test = min(20, test)
-		$CameraPivot.position.x = test
+		camera_x_pos += 1
+		camera_x_pos = min(24, camera_x_pos)
+		$CameraPivot.position.x = camera_x_pos
 	if Input.is_action_pressed("ui_left"):
 		anim_sprite.set_flip_h(true)
 		looking_right = false
 		
 		direction.x = -1
 		
-		test -= 1
-		test = max(-20, test)
-		$CameraPivot.position.x = test
+		camera_x_pos -= 1
+		camera_x_pos = max(-24, camera_x_pos)
+		$CameraPivot.position.x = camera_x_pos
 	if Input.is_action_just_pressed("jump") and not is_on_floor() and dash_count < 1:
 		is_dashing = true
 		dash_count += 1
@@ -106,22 +110,31 @@ func _physics_process(delta: float) -> void:
 	
 	
 func _on_SpikeDetector_area_entered(area: Area2D) -> void:
-	if area.name != "PorterDetector":
-		if area.name != "Area2D":
-			if area.name != "key":
-				if area.name != "area":
-					if area.name != "JumpPadArea":
-						if area.name != "CrystalArea":
-							if area.name != "CrystalArea2":
-								if area.name != "CrystalArea3":
-									if area.name != "CrystalArea4":
-											die()
+	if area.name.begins_with("Spike") and not death_cd:
+		death_buffer.start()
+		death_cd = true
+		die()
+	
+func _on_death_buffer_timeout() -> void:
+	death_cd = false
 
 func die() -> void:
 	PlayerData.deaths += 1
-	queue_free()
 
-
+func camera_zoom_in_dialog():
+	if camera_zoomed_in:
+		yield(anim_player,"animation_finished")
+	anim_player.play("camera_zoom_in")
+	yield(anim_player,"animation_finished")
+	camera_zoomed_in = true
+	
+func camera_zoom_out_dialog():
+	if not camera_zoomed_in:
+		yield(anim_player,"animation_finished")
+	anim_player.play("camera_zoom_out")
+	yield(anim_player,"animation_finished")
+	camera_zoomed_in = false
+	
 func _on_ghost_timer_timeout() -> void:
 	#Creates a trail of sprites behind the Player after he dashes
 	if is_dashing:
@@ -132,4 +145,3 @@ func _on_ghost_timer_timeout() -> void:
 		this_ghost.flip_h = anim_sprite.flip_h
 		this_ghost.scale = anim_sprite.scale
 		this_ghost.modulate = Color(1, 1, 1, 1)
-

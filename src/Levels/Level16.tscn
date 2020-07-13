@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Objects/Tilemaps2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Objects/PortalScene.tscn" type="PackedScene" id=2]
@@ -6,10 +6,13 @@
 [ext_resource path="res://src/Levels/Level17.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/ParallaxBackground.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Objects/Spike.tscn" type="PackedScene" id=6]
+[ext_resource path="res://TitleScreen_New/CanvasFade.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Levels/LevelTemplate.gd" type="Script" id=8]
 [ext_resource path="res://src/UI/UserInterface.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Objects/Crystal.tscn" type="PackedScene" id=10]
 
 [node name="Level16" type="Node2D"]
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -184.0, -576.0, -416.0 ],
 "_edit_vertical_guides_": [ 1184.0, -128.0, 672.0, 672.0 ]
@@ -19,6 +22,7 @@ __meta__ = {
 layer = 101
 
 [node name="UserInterface" parent="UserInterface" instance=ExtResource( 9 )]
+level_length_sec = 14
 
 [node name="Objects" type="Node2D" parent="."]
 
@@ -43,15 +47,6 @@ position = Vector2( 280, -248 )
 position = Vector2( 400, -88 )
 
 [node name="Spikes" type="Node2D" parent="Objects"]
-
-[node name="Spike" parent="Objects/Spikes" instance=ExtResource( 6 )]
-position = Vector2( 600, -432 )
-
-[node name="Spike2" parent="Objects/Spikes" instance=ExtResource( 6 )]
-position = Vector2( 616, -496 )
-
-[node name="Spike3" parent="Objects/Spikes" instance=ExtResource( 6 )]
-position = Vector2( 584, -416 )
 
 [node name="Spike4" parent="Objects/Spikes" instance=ExtResource( 6 )]
 position = Vector2( 504, -400 )
@@ -149,12 +144,6 @@ position = Vector2( 360, -192 )
 [node name="Spike36" parent="Objects/Spikes" instance=ExtResource( 6 )]
 position = Vector2( 440, -192 )
 
-[node name="Spike58" parent="Objects/Spikes" instance=ExtResource( 6 )]
-position = Vector2( 536, -80 )
-
-[node name="Spike59" parent="Objects/Spikes" instance=ExtResource( 6 )]
-position = Vector2( 520, -80 )
-
 [node name="Spike37" parent="Objects/Spikes" instance=ExtResource( 6 )]
 position = Vector2( 456, -208 )
 
@@ -234,14 +223,7 @@ limit_right = 672
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 5 )]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -680.0
-margin_right = 2912.0
-margin_bottom = 1304.0
-color = Color( 0.0980392, 0.101961, 0.156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="CanvasFade" parent="." instance=ExtResource( 7 )]
 
 [editable path="Objects/PortalScene"]
 
