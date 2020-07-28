@@ -23,7 +23,6 @@ func _on_PlayerData_player_died() -> void:
 	self.paused = true
 	pause_label.text = "YOU DIED"
 
-
 func set_paused(value: bool) -> void:
 	paused = value
 	if paused:
@@ -57,3 +56,15 @@ func _on_ExitGameButton_pressed() -> void:
 	anim_player.play("fade_out_transition")
 	yield(anim_player, "animation_finished")
 	get_tree().quit()
+
+func _on_Options_pressed() -> void:
+	anim_player.play("fade_out_transition")
+	yield(anim_player, "animation_finished")
+	get_tree().paused = false
+	get_tree().change_scene("res://TitleScreen_New/Options.tscn")
+
+func _on_Controls_pressed() -> void:
+	anim_player.play("fade_out_transition")
+	yield(anim_player, "animation_finished")
+	get_tree().paused = false
+	get_tree().change_scene("res://TitleScreen_New/Controls.tscn")

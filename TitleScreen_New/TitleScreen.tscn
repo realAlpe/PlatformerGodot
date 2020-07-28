@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/UI/Background_screens.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TitleScreen_New/Buttons/NewGameButton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://TitleScreen_New/Title.png" type="Texture" id=3]
+[ext_resource path="res://TitleScreen_New/Fonts/pixel_128.tres" type="DynamicFont" id=3]
 [ext_resource path="res://TitleScreen_New/Buttons/OptionsButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://TitleScreen_New/Buttons/ContinueButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=6]
@@ -29,16 +29,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Logo" type="TextureRect" parent="Menu"]
+[node name="Label" type="Label" parent="Menu"]
 margin_right = 1680.0
-margin_bottom = 161.0
-texture = ExtResource( 3 )
-stretch_mode = 4
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 3 )
+text = "NECRILYX"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu"]
+margin_top = 132.0
+margin_right = 1680.0
+margin_bottom = 132.0
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
-margin_top = 165.0
+margin_top = 136.0
 margin_right = 1680.0
-margin_bottom = 773.0
+margin_bottom = 744.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
@@ -115,7 +123,7 @@ margin_bottom = 560.0
 texture = ExtResource( 6 )
 
 [node name="VersionLabel" type="Label" parent="Menu"]
-margin_top = 777.0
+margin_top = 748.0
 margin_right = 1680.0
 margin_bottom = 920.0
 size_flags_vertical = 3
@@ -139,5 +147,3 @@ valign = 1
 [editable path="Menu/CenterRow/Buttons/OptionsButton"]
 
 [editable path="Menu/CenterRow/Buttons/Exit Game"]
-
-[editable path="FadeInTransition"]

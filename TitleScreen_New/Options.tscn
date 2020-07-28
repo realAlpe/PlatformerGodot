@@ -166,7 +166,7 @@ margin_bottom = 218.0
 margin_right = 1728.0
 margin_bottom = 104.0
 custom_fonts/font = ExtResource( 2 )
-text = "Main Menu"
+text = "Back"
 scene_to_load = "res://TitleScreen_New/TitleScreen.tscn"
 
 [node name="FadeInTransition" parent="." instance=ExtResource( 7 )]

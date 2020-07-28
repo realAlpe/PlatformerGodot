@@ -19,3 +19,6 @@ func _on_entered():
 	if timer_valid:
 		if LevelData.finished_level_under_time.count(name) == 0:
 			LevelData.finished_level_under_time.append(name)
+
+func _exit_tree() -> void:
+	LevelData.previous_scene = "res://src/Levels/%s.tscn" % name

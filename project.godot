@@ -35,7 +35,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "Dialogbox" )
+enabled=PoolStringArray( "Dialogbox", "EXP-System-Dialog" )
 
 [input]
 

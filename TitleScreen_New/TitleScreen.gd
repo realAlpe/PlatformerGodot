@@ -26,3 +26,6 @@ func _on_Exit_Game_pressed() -> void:
 	anim_player.play("fade_out_transition")
 	yield(anim_player,"animation_finished")
 	get_tree().quit()
+
+func _exit_tree() -> void:
+	LevelData.previous_scene = "res://TitleScreen_New/TitleScreen.tscn"

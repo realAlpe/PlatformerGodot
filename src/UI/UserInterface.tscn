@@ -35,16 +35,16 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 659.0
-margin_top = 274.0
+margin_top = 143.0
 margin_right = -660.0
-margin_bottom = -273.0
+margin_bottom = -130.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseOverlay/MarginContainer"]
 margin_right = 601.0
-margin_bottom = 533.0
+margin_bottom = 807.0
 custom_constants/separation = 54
 
 [node name="Panel" parent="PauseOverlay/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
@@ -68,12 +68,12 @@ __meta__ = {
 [node name="CenterContainer" type="CenterContainer" parent="PauseOverlay/MarginContainer/VBoxContainer"]
 margin_top = 208.0
 margin_right = 601.0
-margin_bottom = 478.0
+margin_bottom = 676.0
 
 [node name="Button" type="VBoxContainer" parent="PauseOverlay/MarginContainer/VBoxContainer/CenterContainer"]
 margin_left = 96.0
 margin_right = 504.0
-margin_bottom = 270.0
+margin_bottom = 468.0
 size_flags_horizontal = 0
 size_flags_vertical = 3
 custom_constants/separation = 27
@@ -89,10 +89,22 @@ margin_right = 408.0
 margin_bottom = 171.0
 text = "Main Screen"
 
-[node name="ExitGameButton" parent="PauseOverlay/MarginContainer/VBoxContainer/CenterContainer/Button" instance=ExtResource( 1 )]
+[node name="Controls" parent="PauseOverlay/MarginContainer/VBoxContainer/CenterContainer/Button" instance=ExtResource( 1 )]
 margin_top = 198.0
 margin_right = 408.0
 margin_bottom = 270.0
+text = "Controls"
+
+[node name="Options" parent="PauseOverlay/MarginContainer/VBoxContainer/CenterContainer/Button" instance=ExtResource( 1 )]
+margin_top = 297.0
+margin_right = 408.0
+margin_bottom = 369.0
+text = "Options"
+
+[node name="ExitGameButton" parent="PauseOverlay/MarginContainer/VBoxContainer/CenterContainer/Button" instance=ExtResource( 1 )]
+margin_top = 396.0
+margin_right = 408.0
+margin_bottom = 468.0
 text = "Exit Game"
 
 [node name="FadeInTransition" parent="." instance=ExtResource( 7 )]
@@ -168,6 +180,8 @@ __meta__ = {
 }
 [connection signal="pressed" from="PauseOverlay/MarginContainer/VBoxContainer/CenterContainer/Button/RetryButton" to="." method="_on_RetryButton_pressed"]
 [connection signal="pressed" from="PauseOverlay/MarginContainer/VBoxContainer/CenterContainer/Button/MainScreenButton" to="." method="_on_MainScreenButton_pressed"]
+[connection signal="pressed" from="PauseOverlay/MarginContainer/VBoxContainer/CenterContainer/Button/Controls" to="." method="_on_Controls_pressed"]
+[connection signal="pressed" from="PauseOverlay/MarginContainer/VBoxContainer/CenterContainer/Button/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="PauseOverlay/MarginContainer/VBoxContainer/CenterContainer/Button/ExitGameButton" to="." method="_on_ExitGameButton_pressed"]
 [connection signal="timeout" from="Panel/CenterContainer/VBoxContainer/Label/Timer" to="Panel/CenterContainer/VBoxContainer/Label" method="_on_Timer_timeout"]
 

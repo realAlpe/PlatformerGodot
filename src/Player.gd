@@ -9,6 +9,7 @@ const ACCELERATION = 0.1
 onready var anim_sprite = get_node("AnimatedSprite")
 onready var hurtbox = $SpikeDetector
 onready var camera = $CameraPivot/Camera2D
+onready var camerapivot = $CameraPivot
 onready var anim_player = $AnimationPlayer
 onready var death_buffer = $death_buffer
 
@@ -25,11 +26,12 @@ var camera_changed_down = false
 var camera_changed_up = false
 var camera_x_pos = 0
 var camera_zoomed_in = false
-
 var death_cd = false
+var on_slime_wall = false
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
+	
 	if is_on_floor():
 		dash_count = 0
 		is_dashing = false
@@ -43,7 +45,7 @@ func _physics_process(delta: float) -> void:
 		
 		camera_x_pos += 1
 		camera_x_pos = min(24, camera_x_pos)
-		$CameraPivot.position.x = camera_x_pos
+		camerapivot.position.x = camera_x_pos
 	if Input.is_action_pressed("ui_left"):
 		anim_sprite.set_flip_h(true)
 		looking_right = false
@@ -52,7 +54,7 @@ func _physics_process(delta: float) -> void:
 		
 		camera_x_pos -= 1
 		camera_x_pos = max(-24, camera_x_pos)
-		$CameraPivot.position.x = camera_x_pos
+		camerapivot.position.x = camera_x_pos
 	if Input.is_action_just_pressed("jump") and not is_on_floor() and dash_count < 1:
 		is_dashing = true
 		dash_count += 1

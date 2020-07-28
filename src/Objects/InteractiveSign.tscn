@@ -126,11 +126,11 @@ anims/label_fade_out = SubResource( 5 )
 anims/start = SubResource( 6 )
 
 [node name="Label" type="Label" parent="."]
-visible = false
+modulate = Color( 1, 1, 1, 0 )
 margin_left = -26.0
-margin_top = -53.0
+margin_top = -49.0
 margin_right = 184.0
-margin_bottom = -5.0
+margin_bottom = -1.0
 rect_scale = Vector2( 0.25, 0.25 )
 custom_fonts/font = ExtResource( 1 )
 text = "Interact"

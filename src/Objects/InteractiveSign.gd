@@ -1,9 +1,16 @@
 extends Area2D
 
+export(String, FILE) var path_to_dialog
+
 onready var anim_player = $AnimationPlayer
 onready var tree = get_tree()
+onready var dialog_layer = $"../DialogCanvasLayer"
 
 var is_in_area = false
+
+func _ready() -> void:
+	var dialog_to_instance = load(path_to_dialog).instance()
+	dialog_layer.add_child(dialog_to_instance)
 
 func _on_InteractiveSign_body_entered(body: Node) -> void:
 	if body.name == "Player":

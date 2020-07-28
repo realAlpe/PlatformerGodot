@@ -6,26 +6,27 @@
 [ext_resource path="res://addons/Dialogbox/Dialogbox.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
+size = 64
 font_data = ExtResource( 3 )
 
 [node name="DialogboxTemplate" type="NinePatchRect"]
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
 margin_left = -600.0
-margin_top = -300.0
+margin_top = 40.0
 margin_right = 600.0
+margin_bottom = 340.0
 texture = ExtResource( 2 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 character_speed = 0.75
+text = [ "IDK IDK DIK", "IDKDISADKJAOSD", "IDKDISADKJAOSDIDKDISADKJAOSDIDKDISADKJAOSDIDKDISADKJAOSD" ]
 input_trigger = "interact"
 input_speedup = "interact"
 speedup_speed = 0.75
-text_margin = Vector2( 16, 16 )
+text_margin = Vector2( 43, 32 )
 textbox_size = Vector2( 0, 0 )
 sound = ExtResource( 1 )
 font = SubResource( 1 )
